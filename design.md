@@ -17,6 +17,7 @@
 ### 1.3 Tech Stack Implementation
 Desain ini sangat dioptimalkan untuk implementasi *fullstack* di ekosistem .NET menggunakan:
 *   **Framework:** ASP.NET Core (Razor Pages / MVC / Blazor) & C#.
+*   **Database:** SQLite menggunakan library `Microsoft.EntityFrameworkCore.Sqlite`.
 *   **Templating:** Razor Syntax (`.cshtml` atau `.razor`) untuk memecah UI menjadi komponen atau *Partial Views* yang *reusable* (seperti `_Sidebar.cshtml` atau `<KanbanCard />`).
 *   **Styling:** Tailwind CSS (sangat mudah diintegrasikan langsung ke dalam *class* HTML di file Razor untuk menghasilkan UI yang presisi sesuai desain).
 
