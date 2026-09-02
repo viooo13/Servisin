@@ -15,15 +15,16 @@
 *   **Display & Highlight:** Bold, dramatic custom typography untuk elemen hero, sapaan, dan ID Tiket (misal: **#TKT-992**).
 
 ### 1.3 Tech Stack Implementation
-Desain ini sangat dioptimalkan untuk implementasi *frontend* menggunakan:
-*   **Framework:** React.js
-*   **Styling:** Tailwind CSS (mudah menerapkan *utility classes* seperti `bg-slate-900`, `bg-white`, `shadow-sm`, dan `rounded-xl`).
+Desain ini sangat dioptimalkan untuk implementasi *fullstack* di ekosistem .NET menggunakan:
+*   **Framework:** ASP.NET Core (Razor Pages / MVC / Blazor) & C#.
+*   **Templating:** Razor Syntax (`.cshtml` atau `.razor`) untuk memecah UI menjadi komponen atau *Partial Views* yang *reusable* (seperti `_Sidebar.cshtml` atau `<KanbanCard />`).
+*   **Styling:** Tailwind CSS (sangat mudah diintegrasikan langsung ke dalam *class* HTML di file Razor untuk menghasilkan UI yang presisi sesuai desain).
 
 ---
 
 ## 2. Admin & Technician Portal (B2B Dashboard)
 
-Sistem navigasi menggunakan *Left Sidebar* berwarna Dark Navy dengan area kerja utama Pure White.
+Sistem navigasi menggunakan *Left Sidebar* berwarna Dark Navy dengan area kerja utama Pure White. Pendekatan ini sangat cocok menggunakan ASP.NET Core Layout (`_Layout.cshtml`).
 
 ### 2.1 Dashboard Overview
 **Fokus:** Metrik operasional harian.
@@ -38,7 +39,7 @@ Sistem navigasi menggunakan *Left Sidebar* berwarna Dark Navy dengan area kerja 
 ### 2.3 Inventory Management
 **Fokus:** Kontrol stok suku cadang dan harga dasar untuk kalkulasi AI.
 > **Prompt (Figma/AI Generator):**
-> High-fidelity UI design of an Inventory Management page. Dark Navy sidebar. Pure white main workspace. At the top right, a prominent Dark Navy button labeled "+ Add Spare Part". The core content is a clean, spacious data table with the following columns: "Part ID", "Item Name", "Category" (Screen, Battery, IC), "Stock Level", "Base Price", and "Actions" (Edit/Delete icons). Rows with stock levels below 5 are highlighted with a subtle warm orange alert icon. Minimalist enterprise UI, clear grid alignments, optimized for React and Tailwind CSS rendering.
+> High-fidelity UI design of an Inventory Management page. Dark Navy sidebar. Pure white main workspace. At the top right, a prominent Dark Navy button labeled "+ Add Spare Part". The core content is a clean, spacious data table with the following columns: "Part ID", "Item Name", "Category" (Screen, Battery, IC), "Stock Level", "Base Price", and "Actions" (Edit/Delete icons). Rows with stock levels below 5 are highlighted with a subtle warm orange alert icon. Minimalist enterprise UI, clear grid alignments, optimized for Razor components and Tailwind CSS rendering.
 
 ---
 
@@ -49,7 +50,7 @@ Berbeda dengan admin, *dashboard* pelanggan lebih berfokus pada ketenangan pikir
 ### 3.1 Customer Overview & Active Tracking
 **Fokus:** Ringkasan perangkat yang sedang diservis dan tombol aksi cepat.
 > **Prompt (Figma/AI Generator):**
-> High-fidelity UI design of a Customer Portal Dashboard for a gadget repair platform named "Servisin". Desktop web view. Deep Dark Navy left sidebar with navigation icons: Overview, Active Repairs, Service History, Profile. The main workspace has a Pure White background. At the top, a clean, bold custom typography greeting reading "Welcome back, Pio". Below it, a large featured card titled "Current Active Repair" showing an iPhone 13 Pro Max with a horizontal Live Tracking timeline indicating "In Progress". Next to it, a prominent Dark Navy floating-style card with a "Start New AI Triage" Call-to-Action button. Spacious, minimalist SaaS UI, Dribbble trending.
+> High-fidelity UI design of a Customer Portal Dashboard for a gadget repair platform named "Servisin". Desktop web view. Deep Dark Navy left sidebar with navigation icons: Overview, Active Repairs, Service History, Profile. The main workspace has a Pure White background. At the top, a clean, bold custom typography greeting reading "Welcome back". Below it, a large featured card titled "Current Active Repair" showing an iPhone 13 Pro Max with a horizontal Live Tracking timeline indicating "In Progress". Next to it, a prominent Dark Navy floating-style card with a "Start New AI Triage" Call-to-Action button. Spacious, minimalist SaaS UI, Dribbble trending.
 
 ### 3.2 Action Required (Urgent Notification)
 **Fokus:** Meminta persetujuan pelanggan jika teknisi menemukan kerusakan baru.
