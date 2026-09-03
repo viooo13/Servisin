@@ -1,0 +1,121 @@
+@{
+    ViewData["Title"] = "Smart Kanban";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<!-- Kanban Board Container -->
+<div class="flex h-[calc(100vh-12rem)] gap-6 overflow-x-auto pb-4">
+    
+    <!-- Column: Queue -->
+    <div class="flex-shrink-0 w-80 bg-gray-50 rounded-xl border border-gray-200 flex flex-col">
+        <div class="p-4 border-b border-gray-200 flex justify-between items-center bg-white rounded-t-xl">
+            <h3 class="font-semibold text-[#0F172A]">Queue</h3>
+            <span class="bg-gray-100 text-gray-600 text-xs font-bold px-2.5 py-0.5 rounded-full">2</span>
+        </div>
+        <div class="flex-1 p-3 space-y-3 overflow-y-auto">
+            
+            <!-- Kanban Card 1 -->
+            <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow cursor-grab active:cursor-grabbing">
+                <div class="flex justify-between items-start mb-3">
+                    <span class="font-black text-lg tracking-tight text-[#0F172A]">#TKT-882</span>
+                    <span class="text-xs font-medium text-slate-500 bg-slate-100 px-2 py-1 rounded">10m ago</span>
+                </div>
+                <h4 class="font-medium text-slate-700 mb-3">iPhone 13 Pro</h4>
+                <div class="flex gap-2 mb-4">
+                    <div class="w-12 h-12 bg-gray-200 rounded-md overflow-hidden flex-shrink-0">
+                        <img src="https://placehold.co/100x100?text=Crack" alt="Damage" class="w-full h-full object-cover grayscale opacity-80" />
+                    </div>
+                    <div class="flex flex-wrap gap-1 content-start">
+                        <span class="text-[10px] font-bold tracking-wide uppercase bg-blue-50 text-blue-700 border border-blue-200 px-1.5 py-0.5 rounded">Screen</span>
+                        <span class="text-[10px] font-bold tracking-wide uppercase bg-purple-50 text-purple-700 border border-purple-200 px-1.5 py-0.5 rounded">Battery</span>
+                    </div>
+                </div>
+                <div class="flex items-center justify-between mt-2 pt-3 border-t border-gray-100">
+                    <div class="flex -space-x-2">
+                        <div class="w-6 h-6 rounded-full bg-[#0369A1] text-white flex items-center justify-center text-[10px] font-bold border-2 border-white">BS</div>
+                    </div>
+                    <span class="text-xs font-medium text-[#0369A1]">Assign</span>
+                </div>
+            </div>
+
+            <!-- Kanban Card 2 -->
+            <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow cursor-grab active:cursor-grabbing">
+                <div class="flex justify-between items-start mb-3">
+                    <span class="font-black text-lg tracking-tight text-[#0F172A]">#TKT-883</span>
+                    <span class="text-xs font-medium text-slate-500 bg-slate-100 px-2 py-1 rounded">1h ago</span>
+                </div>
+                <h4 class="font-medium text-slate-700 mb-3">Samsung Galaxy S22</h4>
+                <div class="flex gap-2 mb-4">
+                    <div class="flex flex-wrap gap-1 content-start">
+                        <span class="text-[10px] font-bold tracking-wide uppercase bg-red-50 text-red-700 border border-red-200 px-1.5 py-0.5 rounded">Water Damage</span>
+                    </div>
+                </div>
+                <div class="flex items-center justify-between mt-2 pt-3 border-t border-gray-100">
+                    <div class="flex -space-x-2">
+                         <div class="w-6 h-6 rounded-full bg-gray-300 border-2 border-white"></div>
+                    </div>
+                    <span class="text-xs font-medium text-[#0369A1]">Assign</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Column: Checking -->
+    <div class="flex-shrink-0 w-80 bg-gray-50 rounded-xl border border-gray-200 flex flex-col">
+        <div class="p-4 border-b border-gray-200 flex justify-between items-center bg-white rounded-t-xl">
+            <h3 class="font-semibold text-[#0F172A]">Checking</h3>
+            <span class="bg-blue-100 text-blue-700 text-xs font-bold px-2.5 py-0.5 rounded-full">0</span>
+        </div>
+        <div class="flex-1 p-3 flex items-center justify-center border-2 border-dashed border-gray-200 m-3 rounded-lg bg-gray-50/50">
+            <span class="text-sm font-medium text-gray-400">Drop cards here</span>
+        </div>
+    </div>
+
+    <!-- Column: Waiting Parts -->
+    <div class="flex-shrink-0 w-80 bg-gray-50 rounded-xl border border-gray-200 flex flex-col">
+        <div class="p-4 border-b border-gray-200 flex justify-between items-center bg-white rounded-t-xl">
+            <h3 class="font-semibold text-[#0F172A]">Waiting Parts</h3>
+            <span class="bg-orange-100 text-orange-700 text-xs font-bold px-2.5 py-0.5 rounded-full">0</span>
+        </div>
+        <div class="flex-1 p-3 flex items-center justify-center border-2 border-dashed border-gray-200 m-3 rounded-lg bg-gray-50/50">
+            <span class="text-sm font-medium text-gray-400">Drop cards here</span>
+        </div>
+    </div>
+
+    <!-- Column: In Progress -->
+    <div class="flex-shrink-0 w-80 bg-gray-50 rounded-xl border border-gray-200 flex flex-col">
+        <div class="p-4 border-b border-gray-200 flex justify-between items-center bg-white rounded-t-xl">
+            <h3 class="font-semibold text-[#0F172A]">In Progress</h3>
+            <span class="bg-green-100 text-green-700 text-xs font-bold px-2.5 py-0.5 rounded-full">1</span>
+        </div>
+        <div class="flex-1 p-3 space-y-3 overflow-y-auto">
+            
+            <!-- OVERDUE Kanban Card (Fire Ripple Gradient) -->
+            <div class="bg-white p-4 rounded-lg shadow-md cursor-grab active:cursor-grabbing relative overflow-hidden group">
+                <!-- Warm-to-dark fire ripple gradient border effect -->
+                <div class="absolute inset-0 bg-gradient-to-br from-orange-400 via-red-500 to-red-900 p-[2px] rounded-lg">
+                    <div class="h-full w-full bg-white rounded-md p-4 flex flex-col relative z-10">
+                        <div class="flex justify-between items-start mb-3">
+                            <span class="font-black text-lg tracking-tight text-[#0F172A]">#TKT-710</span>
+                            <span class="text-xs font-bold text-red-700 bg-red-100 px-2 py-1 rounded animate-pulse">OVERDUE</span>
+                        </div>
+                        <h4 class="font-medium text-slate-700 mb-3">iPad Pro M2</h4>
+                        <div class="flex gap-2 mb-4">
+                            <div class="flex flex-wrap gap-1 content-start">
+                                <span class="text-[10px] font-bold tracking-wide uppercase bg-gray-100 text-gray-700 border border-gray-200 px-1.5 py-0.5 rounded">Logic Board</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between mt-auto pt-3 border-t border-gray-100">
+                            <div class="flex -space-x-2">
+                                <div class="w-6 h-6 rounded-full bg-emerald-600 text-white flex items-center justify-center text-[10px] font-bold border-2 border-white">JS</div>
+                            </div>
+                            <span class="text-xs font-medium text-slate-500">2 days late</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

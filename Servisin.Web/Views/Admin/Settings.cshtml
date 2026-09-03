@@ -1,0 +1,147 @@
+@{
+    ViewData["Title"] = "Tenant Settings";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="max-w-5xl mx-auto space-y-6 pb-12">
+
+    <!-- 1. Profil Bengkel (Shop Profile) -->
+    <div class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
+        <div class="px-6 py-4 border-b border-gray-100 bg-gray-50 flex items-center justify-between">
+            <h2 class="text-lg font-semibold text-[#0F172A]">Profil Bengkel</h2>
+            <button type="button" class="px-4 py-2 text-sm font-medium text-white bg-[#0F172A] rounded-lg hover:bg-[#1e293b] transition-colors shadow-sm cursor-pointer">Simpan Profil</button>
+        </div>
+        <div class="p-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Logo Upload -->
+            <div class="col-span-1 flex flex-col items-center">
+                <div class="w-32 h-32 rounded-xl bg-gray-100 border-2 border-dashed border-gray-300 flex items-center justify-center overflow-hidden mb-3 relative group cursor-pointer">
+                    <img src="https://placehold.co/400x400?text=Logo" alt="Shop Logo" class="w-full h-full object-cover group-hover:opacity-50 transition-opacity">
+                    <div class="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                        <svg class="w-8 h-8 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        <span class="text-xs font-semibold mt-1 text-slate-700">Ubah Logo</span>
+                    </div>
+                </div>
+                <p class="text-xs text-slate-500 text-center">Format JPG, PNG (Max. 2MB)</p>
+            </div>
+            <!-- Form Details -->
+            <div class="col-span-1 md:col-span-2 space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-1">Nama Bengkel</label>
+                    <input type="text" value="Servisin Sudirman" class="w-full px-4 py-2 bg-gray-50 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#0369A1]/20 focus:border-[#0369A1] transition-all" />
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-1">Alamat Lengkap</label>
+                    <textarea rows="2" class="w-full px-4 py-2 bg-gray-50 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#0369A1]/20 focus:border-[#0369A1] transition-all">Jl. Jend. Sudirman No. Kav 21, Jakarta Selatan</textarea>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-1">Nomor WhatsApp</label>
+                        <input type="text" value="081234567890" class="w-full px-4 py-2 bg-gray-50 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#0369A1]/20 focus:border-[#0369A1] transition-all" />
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-1">Jam Operasional</label>
+                        <input type="text" value="09:00 - 18:00 (Sen-Sab)" class="w-full px-4 py-2 bg-gray-50 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#0369A1]/20 focus:border-[#0369A1] transition-all" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. AI Guardrails -->
+    <div class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
+        <div class="px-6 py-4 border-b border-gray-100 bg-gray-50 flex items-center justify-between">
+            <div>
+                <h2 class="text-lg font-semibold text-[#0F172A]">AI Guardrails</h2>
+                <p class="text-xs text-slate-500 mt-1">Batasi perilaku AI Triage khusus untuk pelanggan Anda</p>
+            </div>
+            <button type="button" class="px-4 py-2 text-sm font-medium text-white bg-[#0F172A] rounded-lg hover:bg-[#1e293b] transition-colors shadow-sm cursor-pointer">Simpan Instruksi</button>
+        </div>
+        <div class="p-6 space-y-6">
+            <!-- Toggle -->
+            <div class="flex items-center justify-between p-4 border border-gray-100 rounded-lg bg-gray-50/50">
+                <div>
+                    <h3 class="font-medium text-slate-800">Estimasi Harga Otomatis</h3>
+                    <p class="text-xs text-slate-500 mt-0.5">Izinkan AI untuk menebak harga berdasarkan database Inventory Anda.</p>
+                </div>
+                <label class="relative inline-flex items-center cursor-pointer">
+                    <input type="checkbox" value="" class="sr-only peer" checked>
+                    <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-[#0369A1]/30 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#0369A1]"></div>
+                </label>
+            </div>
+            <!-- Custom Prompt -->
+            <div>
+                <label class="block text-sm font-medium text-slate-700 mb-2">Custom System Prompt (Instruksi Tambahan AI)</label>
+                <textarea rows="4" placeholder="Misal: Selalu beritahu pelanggan bahwa harga final ditentukan setelah teknisi melakukan pengecekan fisik di bengkel." class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#0369A1]/20 focus:border-[#0369A1] transition-all font-mono text-xs"></textarea>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. Manajemen Staf -->
+    <div class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
+        <div class="px-6 py-4 border-b border-gray-100 bg-gray-50 flex items-center justify-between">
+            <h2 class="text-lg font-semibold text-[#0F172A]">Manajemen Staf (Teknisi)</h2>
+            <button class="text-sm font-medium text-[#0369A1] hover:text-[#0F172A] transition-colors cursor-pointer flex items-center gap-1">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                Tambah Teknisi
+            </button>
+        </div>
+        <div class="overflow-x-auto">
+            <table class="w-full text-left text-sm whitespace-nowrap">
+                <thead class="bg-white text-slate-500 font-medium border-b border-gray-100">
+                    <tr>
+                        <th class="px-6 py-3">Nama</th>
+                        <th class="px-6 py-3">Email</th>
+                        <th class="px-6 py-3">Status</th>
+                        <th class="px-6 py-3 text-right">Aksi</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-100">
+                    <tr class="hover:bg-gray-50 transition-colors">
+                        <td class="px-6 py-3 font-medium text-slate-800">Joko Suprianto</td>
+                        <td class="px-6 py-3 text-slate-500">joko@servisin.com</td>
+                        <td class="px-6 py-3"><span class="px-2 py-1 bg-green-50 text-green-700 text-xs rounded border border-green-100 font-medium">Aktif</span></td>
+                        <td class="px-6 py-3 text-right text-[#0369A1] cursor-pointer hover:underline">Edit</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50 transition-colors">
+                        <td class="px-6 py-3 font-medium text-slate-800">Bagus Hermawan</td>
+                        <td class="px-6 py-3 text-slate-500">bagus@servisin.com</td>
+                        <td class="px-6 py-3"><span class="px-2 py-1 bg-red-50 text-red-700 text-xs rounded border border-red-100 font-medium">Resigned</span></td>
+                        <td class="px-6 py-3 text-right text-[#0369A1] cursor-pointer hover:underline">Restore</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- 4. Metode Pembayaran Toko -->
+    <div class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
+        <div class="px-6 py-4 border-b border-gray-100 bg-gray-50 flex items-center justify-between">
+            <div>
+                <h2 class="text-lg font-semibold text-[#0F172A]">Metode Pembayaran (Rekening)</h2>
+                <p class="text-xs text-slate-500 mt-1">Ditampilkan pada Invoice pelanggan</p>
+            </div>
+            <button type="button" class="px-4 py-2 text-sm font-medium text-white bg-[#0F172A] rounded-lg hover:bg-[#1e293b] transition-colors shadow-sm cursor-pointer">Simpan Rekening</button>
+        </div>
+        <div class="p-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-1">Bank Utama</label>
+                    <select class="w-full px-4 py-2 bg-gray-50 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#0369A1]/20 focus:border-[#0369A1] transition-all cursor-pointer">
+                        <option>BCA (Bank Central Asia)</option>
+                        <option>Mandiri</option>
+                        <option>BNI</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-1">Nomor Rekening</label>
+                    <input type="text" placeholder="Misal: 1234567890" class="w-full px-4 py-2 bg-gray-50 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#0369A1]/20 focus:border-[#0369A1] transition-all" />
+                </div>
+                <div class="md:col-span-2">
+                    <label class="block text-sm font-medium text-slate-700 mb-1">Atas Nama (A/N)</label>
+                    <input type="text" placeholder="Misal: PT Servisin Teknologi" class="w-full px-4 py-2 bg-gray-50 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#0369A1]/20 focus:border-[#0369A1] transition-all" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

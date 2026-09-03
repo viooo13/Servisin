@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="Servisin.Core/Servisin.Core.csproj" />
+  <Project Path="Servisin.Data/Servisin.Data.csproj" />
+  <Project Path="Servisin.Services/Servisin.Services.csproj" />
+  <Project Path="Servisin.Web/Servisin.Web.csproj" />
+</Solution>

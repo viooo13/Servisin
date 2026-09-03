@@ -1,0 +1,8 @@
+
+# Ignore AI Agent folders
+.agent/
+
+node_modules/
+bin/
+obj/
+.vs/
